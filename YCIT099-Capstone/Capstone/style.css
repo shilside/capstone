@@ -1,0 +1,94 @@
+body {
+  font-family: "Saira", sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffffff;
+}
+
+.title {
+  color: rgb(0, 0, 0);
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  font-size: 70px;
+  line-height: 0px;
+  border-style: hidden;
+  outline: none;
+}
+
+.title h1 {
+  font-size: 60px;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  text-align: center;
+  /* font-weight: bold; */
+}
+
+.motto {
+  color: #000000;
+  margin: 0px;
+  padding: 0;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.motto h2 {
+  font-size: 21px;
+  letter-spacing: -0.5px;
+  font-weight: 100;
+  margin: 30px;
+  margin-bottom: 11px;
+  color: rgb(15, 44, 14);
+}
+
+.material-symbols-outlined {
+  font-size: 36px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 1000, "GRAD" 0, "opsz" 38;
+  position: absolute;
+  top: 15px;
+  justify-content: center;
+  align-items: center;
+  left: 47px;
+  /* height: 52px; */
+  margin: 0px;
+  /* font-size: 30px; */
+  color: #000000;
+  /* cursor: pointer; */
+  /* z-index: 1; */
+}
+
+.homeButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.homeButtons .reservation,
+.homeButtons .viewmap {
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #a4a8a8;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
