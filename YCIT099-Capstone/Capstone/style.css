@@ -96,7 +96,7 @@ body {
   position: fixed;
   top: 30px;
   left: 40px;
-  background-color: rgb(202, 160, 160);
+  /* background-color: rgb(202, 160, 160); */
 }
 
 .menu-content ul {
