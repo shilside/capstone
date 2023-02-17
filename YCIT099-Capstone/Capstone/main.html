@@ -15,7 +15,14 @@
   </head>
   <body>
     <div class="container">
-      <div class="marquee"></div>
+      <div class="ticker-wrap">
+        <div class="ticker">
+          <div class="ticker__item">
+          Rides available in: Downtown Montreal • Point-st Charles • NDG • Montreal-Nord • Côte-des-Neiges • Rosemont • LaSalle • Westmount • Verdun • Ville-Marie • Plateau-Mont-Royal • Outremont • Ahuntsic-Cartierville • Hochelaga-Maisonneuve • Villeray-Saint-Michel • Saint-Henri • Saint-Laurent • Saint-Michel • Anjou • Mercier-Hochelaga-Maisonneuve • Lachine
+        </div>
+        <div class="ticker__item">| Current Weather: (❄️) -3°C • Snowy</div>
+        </div>   
+      </div>
       <div class="header">
         <div class="title">
           <h1>R Y D E</h1>
@@ -42,17 +49,7 @@
             <li>
               <a href="main.html">Home </a>
             </li>
-            <li>
-              <a href="map.html"
-                >Map
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"> -->
-                <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                <!-- <path
-                    d="M32 144a144 144 0 1 1 288 0A144 144 0 1 1 32 144zM176 80c8.8 0 16-7.2 16-16s-7.2-16-16-16c-53 0-96 43-96 96c0 8.8 7.2 16 16 16s16-7.2 16-16c0-35.3 28.7-64 64-64zM144 480V317.1c10.4 1.9 21.1 2.9 32 2.9s21.6-1 32-2.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32z"
-                  />
-                </svg> -->
-              </a>
-            </li>
+            <li><a href="map.html">Map</a></li>
             <li><a href="reservation.html">Reservation</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -60,7 +57,28 @@
           </ul>
         </nav>
       </div>
-      
+      <div class="profile">
+        <div class="profile-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height=48" width="48">
+            <path
+              d="M11.1 35.25q3.15-2.2 6.25-3.375Q20.45 30.7 24 30.7q3.55 0 6.675 1.175t6.275 3.375q2.2-2.7 3.125-5.45Q41 27.05 41 24q0-7.25-4.875-12.125T24 7q-7.25 0-12.125 4.875T7 24q0 3.05.95 5.8t3.15 5.45ZM24 25.5q-2.9 0-4.875-1.975T17.15 18.65q0-2.9 1.975-4.875T24 11.8q2.9 0 4.875 1.975t1.975 4.875q0 2.9-1.975 4.875T24 25.5ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 24q0-4.15 1.575-7.775t4.3-6.35q2.725-2.725 6.375-4.3Q19.9 4 24 4q4.15 0 7.775 1.575t6.35 4.3q2.725 2.725 4.3 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.3 6.375-2.725 2.725-6.35 4.3Q28.15 44 24 44Zm0-3q2.75 0 5.375-.8t5.175-2.8q-2.55-1.8-5.2-2.75-2.65-.95-5.35-.95-2.7 0-5.35.95-2.65.95-5.2 2.75 2.55 2 5.175 2.8Q21.25 41 24 41Zm0-18.5q1.7 0 2.775-1.075t1.075-2.775q0-1.7-1.075-2.775T24 14.8q-1.7 0-2.775 1.075T20.15 18.65q0 1.7 1.075 2.775T24 22.5Zm0-3.85Zm0 18.7Z"
+            />
+          </svg>
+        </div>
+        <nav class="profile-content" style="display: none">
+          <ul>
+            <li><a href="account.html">My Account</a></li>
+            <li><a href="access.html">Accessibility</a></li>
+            <li><a href="payment.html">Payment Methods</a></li>
+            <li><a href="history.html">Ryde History</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="damages.html">Report Loss/Damage</a></li>
+            <li><a href="lang.html">Français (FR)</a></li>
+            <li><a href="referral.html">Referrals</a></li>
+            <li><a href="login.html">Log Out</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
     <!--Menu-->
     <script>
@@ -70,8 +88,19 @@
       menuIcon.addEventListener("click", function () {
         menuIcon.classList.toggle("change");
         menuContent.style.display =
-          menuContent.style.display === "none" ? "flex" : "none";
+          menuContent.style.display === "none" ? "block" : "none";
       });
+
+
+      const profileIcon = document.querySelector(".profile-icon");
+      const profileContent = document.querySelector(".profile-content");
+
+      profileIcon.addEventListener("click", function () {
+        profileIcon.classList.toggle("change");
+        profileContent.style.display =
+          profileContent.style.display === "none" ? "flex" : "none";
+      });
+
     </script>
   </body>
 </html>
