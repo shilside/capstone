@@ -2,9 +2,18 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { Client } = require("pg");
 
+//add cors
+const cors = require("cors");
+
+//initialize cors
+
 const app = express();
 app.use(bodyParser.json());
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+  next();
+});
 const client = new Client({
   host: "localhost",
   port: 5800,

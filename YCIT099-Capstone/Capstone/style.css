@@ -88,7 +88,7 @@ body {
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
   -webkit-animation-name: ticker;
-  -webkit-animation-duration: 30s;
+  -webkit-animation-duration: 100s;
 }
 
 .ticker-wrap .ticker__item {
@@ -209,30 +209,71 @@ body {
   width: 100%;
   height: 50px;
 }
+
+.menu-content {
+  display: block;
+  margin-left: -5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: rgb(236 221 240);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* add box shadow */
+}
+
+.profile-content {
+  display: block;
+  margin-left: -5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: rgb(236 221 240);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* add box shadow */
+}
+
+.menu-content ul li:hover {
+  background-color: rgba(
+    86,
+    0,
+    77,
+    0.02
+  ); /* add a slightly darker background color */
+}
+
 .menu-content ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
+  margin: 10px;
+  display: block;
+}
+.menu-content ul li {
+  /* width: 100%; */
+  padding: 10px;
+  border-bottom: 1px solid rgba(228, 201, 245, 0.505);
+  text-align: center;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
 }
 
 .profile-content ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 10px;
+  display: block;
+}
+.profile-content ul li {
+  /* width: 100%; */
+  padding: 10px;
+  border-bottom: 1px solid rgba(228, 201, 245, 0.505);
+  text-align: center;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
 }
 
-.profile-content .menu-content {
+.profile-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  /* height: 100%; */
   transition: transform 0.3s ease-out;
 }
 
@@ -255,7 +296,7 @@ body {
 }
 
 .profile-content {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .menu-icon-bar1,

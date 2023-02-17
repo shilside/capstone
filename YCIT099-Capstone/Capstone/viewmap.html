@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 400px; /* The height is 400 pixels */
+        width: 50%; /* The width is the width of the web page */
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Rydes Around the City</h3>
+    <div id="map"></div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeajVYEhWtjx894EjZNQAOLG3l1C9fOd8&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <script>
+      let map;
+
+      function initMap() {
+        // Get station data from server
+        fetch("http://localhost:3333/stations")
+          .then((response) => response.json())
+          .then((stations) => {
+            // Create map centered on Montreal
+            const montreal = { lat: 45.5017, lng: -73.5673 };
+            map = new google.maps.Map(document.getElementById("map"), {
+              center: montreal,
+              zoom: 12,
+            });
+
+            console.log(stations);
+
+            const marker = new google.maps.Marker({
+              position: montreal,
+              map: map,
+            });
+
+            const image = {
+              url: "https://i.imgur.com/mHhwAYe.png",
+              scaledSize: new google.maps.Size(32, 32),
+            };
+
+            stations.forEach((element) => {
+              const marker = new google.maps.Marker({
+                position: {
+                  lat: parseFloat(element.lat),
+                  lng: parseFloat(element.lon),
+                },
+                map: map,
+                icon: image,
+              });
+
+              const infowindow = new google.maps.InfoWindow({
+                content: element.name,
+              });
+
+              marker.addListener("click", () => {
+                map.setZoom(16);
+                map.setCenter(marker.getPosition());
+                const infowindow = new google.maps.InfoWindow({
+                  content: `${station.name} - Bikes Available: 10`,
+                });
+                infowindow.open(map, marker);
+              });
+            });
+
+            // create an array with the parseFLoat of lat and lon data fom api
+            // loop through the array and create a marker for each station
+            // add a listener to each marker to display the station name when clicked
+          });
+      }
+
+      window.initMap = initMap;
+    </script>
+  </body>
+</html>
